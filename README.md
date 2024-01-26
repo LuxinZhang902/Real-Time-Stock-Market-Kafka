@@ -74,3 +74,28 @@ sudo nano config/server.properties
 
 # Start the Zookeeper Server -> Start the Kafka Server, now the Kafka Server should run on the top of the public IP address
 ```
+
+### Providing the security access from our local machine
+
+1. In EC2 Instance page, scroll down and find the Security Section
+2. Click into the security groups -> scroll down and click "Edit Inbound Rules"
+3. Add Rule -> Allow All Traffic -> Anywhere IPV4 [Or MyIP, it will work as well] -> Save Rule
+   \*\* DO NOT allow all traffic! it is not the most secure way \*\*
+
+### Topic
+
+```python
+cd kafka_2.13-3.6.1/
+# 1. Create the Topic
+## New Terminal, connect with ec2
+# Topic name right after --topic
+bin/kafka-topics.sh --create --topic demo_test --bootstrap-server 3.16.162.213:9092 --replication-factor 1 --partitions 1
+# My public address (Ignore the waning of naming)
+
+
+# 2. Start Producer
+bin/kafka-console-producer.sh --topic demo_testing2 --bootstrap-server 3.16.162.213:9092
+
+# 3. Start Consumer
+
+```
