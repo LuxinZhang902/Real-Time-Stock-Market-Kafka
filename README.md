@@ -105,3 +105,4 @@ bin/kafka-console-consumer.sh --topic demo_test --bootstrap-server 3.16.162.213:
 
 ![Consumer Image](/img/connect_consumer.png)
 Now whatever you type in the Topic terminal shows back into the Consumer Terminal
+FINISH THE PRODUCER-KAFKA-CONSUMER part
