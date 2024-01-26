@@ -93,9 +93,15 @@ bin/kafka-topics.sh --create --topic demo_test --bootstrap-server 3.16.162.213:9
 # My public address (Ignore the waning of naming)
 
 
-# 2. Start Producer
-bin/kafka-console-producer.sh --topic demo_testing2 --bootstrap-server 3.16.162.213:9092
+# 2. Start Producer - Make sure the topic names are same
+bin/kafka-console-producer.sh --topic demo_test --bootstrap-server 3.16.162.213:9092
+# Start '>' It is my producer
 
 # 3. Start Consumer
-
+## New Terminal, connect with ec2 - Specific process in in the local doc
+cd kafka_2.13-3.6.1/
+bin/kafka-console-consumer.sh --topic demo_test --bootstrap-server 3.16.162.213:9092
 ```
+
+![Consumer Image](/img/connect_consumer.png)
+Now whatever you type in the Topic terminal shows back into the Consumer Terminal
