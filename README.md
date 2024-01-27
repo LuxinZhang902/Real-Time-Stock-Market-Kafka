@@ -93,7 +93,7 @@ bin/kafka-topics.sh --create --topic demo_test --bootstrap-server 3.16.162.213:9
 # My public address (Ignore the waning of naming)
 
 
-# 2. Start Producer - Make sure the topic names are same
+# 2. Start Producer Kafka - Make sure the topic names are same
 bin/kafka-console-producer.sh --topic demo_test --bootstrap-server 3.16.162.213:9092
 # Start '>' It is my producer
 
