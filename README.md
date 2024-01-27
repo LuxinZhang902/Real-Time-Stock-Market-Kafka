@@ -105,4 +105,20 @@ bin/kafka-console-consumer.sh --topic demo_test --bootstrap-server 3.16.162.213:
 
 ![Consumer Image](/img/connect_consumer.png)
 Now whatever you type in the Topic terminal shows back into the Consumer Terminal
-FINISH THE PRODUCER-KAFKA-CONSUMER part
+FINISH THE PRODUCER-KAFKA-CONSUMER part, we can see the data in real time!
+
+# Writing Code on the Python side
+
+- Push the stock market data in real time, and we will consume that data
+- Then upload that data onto Amazon S3 do the further operations
+
+1. Build Python file in the folder where key exists
+
+```python
+# In the Git terminal
+jupyter notebook
+# Open new notebook
+
+## On the Producer side
+!pip install kafka-python
+```
