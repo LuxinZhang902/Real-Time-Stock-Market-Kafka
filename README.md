@@ -123,6 +123,10 @@ jupyter notebook
 !pip install kafka-python
 ```
 
+## Continue after the jupyter Producer and Consumer
+
+1. Stop theconsumer side's printing part
+
 # Restart the whole thing
 
 ```python
