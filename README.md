@@ -31,7 +31,7 @@ tar -xvf kafka_2.13-3.6.1.tgz
 ls # it should have kafka_2.13-3.6.1  kafka_2.13-3.6.1.tgz shown up
 ```
 
-Since Apache Kafka runs on top of jvm[Java Virtual Machine], thus, Java is also needed to be installed o our PC
+Since Apache Kafka runs on top of jvm[Java Virtual Machine], thus, Java is also needed to be installed on our PC
 
 ```python
 # Checking java environment
@@ -121,4 +121,48 @@ jupyter notebook
 
 ## On the Producer side
 !pip install kafka-python
+```
+
+# Restart the whole thing
+
+```python
+# KAFKA-ZooKeeper
+cd key
+ssh -i "kafka-stock-project.pem" xxxxxxxxx[Found in the .md file outside]
+
+cd kafka_2.13-3.6.1
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+# KAFKA-Server
+cd key
+ssh -i "kafka-stock-project.pem" xxxxxxxxx[Found in the .md file outside]
+export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
+cd kafka_2.13-3.6.1
+bin/kafka-server-start.sh config/server.properties
+
+# KAFKA-Topic
+cd key
+ssh -i "kafka-stock-project.pem" xxxxxxxxx[Found in the .md file outside]
+cd kafka_2.13-3.6.1/
+
+# 1. Create the Topic
+## New Terminal, connect with ec2
+cd key
+ssh -i "kafka-stock-project.pem" xxxxxxxxx[Found in the .md file outside]
+cd kafka_2.13-3.6.1/
+# Topic name right after --topic
+bin/kafka-topics.sh --create --topic demo_test_new --bootstrap-server 3.16.162.213:9092 --replication-factor 1 --partitions 1
+# My public address (Ignore the waning of naming)
+
+
+# 2. Start Producer Kafka - Make sure the topic names are same
+bin/kafka-console-producer.sh --topic demo_test_new --bootstrap-server 3.16.162.213:9092
+# Start '>' It is my producer
+
+# 3. Start Consumer
+## New Terminal, connect with ec2 - Specific process in in the local doc
+cd key
+ssh -i "kafka-stock-project.pem" xxxxxxxxx[Found in the .md file outside]
+cd kafka_2.13-3.6.1/
+bin/kafka-console-consumer.sh --topic demo_test_new --bootstrap-server 3.16.162.213:9092
 ```
