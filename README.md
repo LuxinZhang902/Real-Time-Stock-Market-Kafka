@@ -126,19 +126,20 @@ jupyter notebook
 ## Continue after the jupyter Producer and Consumer
 
 1. Stop theconsumer side's printing part
+2. Sometimes the restart of the server is needed
 
 # Restart the whole thing
 
 ```python
 # KAFKA-ZooKeeper
-cd key
+cd Key
 ssh -i "kafka-stock-project.pem" xxxxxxxxx[Found in the .md file outside]
 
 cd kafka_2.13-3.6.1
 bin/zookeeper-server-start.sh config/zookeeper.properties
 
 # KAFKA-Server
-cd key
+cd Key
 ssh -i "kafka-stock-project.pem" xxxxxxxxx[Found in the .md file outside]
 export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
 cd kafka_2.13-3.6.1
@@ -165,8 +166,12 @@ bin/kafka-console-producer.sh --topic demo_test_new --bootstrap-server 3.16.162.
 
 # 3. Start Consumer
 ## New Terminal, connect with ec2 - Specific process in in the local doc
-cd key
+cd Key
 ssh -i "kafka-stock-project.pem" xxxxxxxxx[Found in the .md file outside]
 cd kafka_2.13-3.6.1/
 bin/kafka-console-consumer.sh --topic demo_test_new --bootstrap-server 3.16.162.213:9092
 ```
+
+## AWS S3 Server
+
+1. Search for S3 in AWS -> click Buckets ->
