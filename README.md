@@ -204,3 +204,7 @@ S3 name: kafka-proj-lx
 1. Search "Glue" on the AWS - Athena
 
 AWS Glue -> Crawlers -> create crawler
+
+2. Create IAM
+
+## Athena
