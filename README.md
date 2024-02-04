@@ -196,3 +196,11 @@ hit enter for the "Default output format" part
 3. Test S3
 
 ![S3](/img/S3.png)
+
+S3 name: kafka-proj-lx
+
+## Crawler
+
+1. Search "Glue" on the AWS - Athena
+
+AWS Glue -> Crawlers -> create crawler
