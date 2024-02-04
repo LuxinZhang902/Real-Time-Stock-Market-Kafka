@@ -146,13 +146,9 @@ cd kafka_2.13-3.6.1
 bin/kafka-server-start.sh config/server.properties
 
 # KAFKA-Topic
-cd key
-ssh -i "kafka-stock-project.pem" xxxxxxxxx[Found in the .md file outside]
-cd kafka_2.13-3.6.1/
-
 # 1. Create the Topic
 ## New Terminal, connect with ec2
-cd key
+cd Key
 ssh -i "kafka-stock-project.pem" xxxxxxxxx[Found in the .md file outside]
 cd kafka_2.13-3.6.1/
 # Topic name right after --topic
@@ -172,6 +168,31 @@ cd kafka_2.13-3.6.1/
 bin/kafka-console-consumer.sh --topic demo_test_new --bootstrap-server 3.16.162.213:9092
 ```
 
+Consumer Side
+
 ## AWS S3 Server
 
-1. Search for S3 in AWS -> click Buckets ->
+1. Search for S3 in AWS -> click Buckets -> Create new bucket -> (Choose the optional, choose as User)name -> keep other thing as it is
+   Bucket Name: kafka-proj-lx
+2. Search IAM on AWS -> users -> Create/Add user -> Name -> Next
+   ![IAM Image](/img/IAM%20Setting.png)
+
+### AWS account setup on the local machine
+
+1. Install AWS cli
+   https://aws.amazon.com/cli/
+
+2. Download MacOS package
+
+```python
+aws configure
+# The Access Key and Secret Access Key are in the document
+```
+
+![Region](/img/Region.png)
+us-east-2
+hit enter for the "Default output format" part
+
+3. Test S3
+
+![S3](/img/S3.png)
